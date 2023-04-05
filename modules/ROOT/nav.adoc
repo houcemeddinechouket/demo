@@ -4,5 +4,5 @@
 * xref:sidebar.adoc[]
 * xref:ui-macros.adoc[]
 * Lists
-** xref:lists/ordered-list.adoc[]
+** xref:lists/
 ** xref:lists/unordered-list.adoc[]
