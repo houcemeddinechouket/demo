@@ -1,0 +1,281 @@
+font:
+  catalog:
+    CMU Concrete:
+      normal: cmunorm.ttf
+      bold: cmunsx.ttf
+      italic: GEM_FONTS_DIR/notoserif-italic-subset.ttf
+      bold_italic: cmunobi.ttf
+    M+ 1mn:
+      normal: GEM_FONTS_DIR/mplus1mn-regular-ascii-conums.ttf
+      bold: GEM_FONTS_DIR/mplus1mn-bold-ascii.ttf
+      italic: GEM_FONTS_DIR/mplus1mn-italic-ascii.ttf
+      bold_italic: GEM_FONTS_DIR/mplus1mn-bold_italic-ascii.ttf
+    M+ 1p Fallback:
+      normal: GEM_FONTS_DIR/mplus1p-regular-fallback.ttf
+      bold: GEM_FONTS_DIR/mplus1p-regular-fallback.ttf
+      italic: GEM_FONTS_DIR/mplus1p-regular-fallback.ttf
+      bold_italic: GEM_FONTS_DIR/mplus1p-regular-fallback.ttf
+  fallbacks:
+    - M+ 1p Fallback
+page:
+  heading-1:
+    break:
+      before: true
+      after: true
+  background_color: ffffff
+  layout: portrait
+  # NOTE multiply inches by 72 to get pt values
+  margin: [0.5in, 0.67in, 0.67in, 0.67in]
+  # size can be a named size (e.g., A4) or custom dimensions (e.g., [8.25in, 11.69in])
+  size: Letter
+  numbering:
+    start-at: after-toc
+base:
+  # color as hex string (leading # is optional)
+  font_color: 000000
+  font_family: CMU Concrete
+  # choose one of these font_size/line_height_length combinations
+  font_size: 10
+  line_height_length: 12
+  #font_size: 11.25
+  #line_height_length: 18
+  line_height: $base_line_height_length / $base_font_size
+  font_size_large: round($base_font_size * 1.25)
+  font_size_small: round($base_font_size * 0.85)
+  font_style: normal
+  align: justify
+  #align: left
+  border_radius: 4
+  border_width: 0.5
+  border_color: eeeeee
+# FIXME vertical_rhythm is weird; we should think in terms of ems
+#vertical_rhythm: $base_line_height_length * 2 / 3
+# correct line height for NotoSerif metrics
+vertical_rhythm: $base_line_height_length
+horizontal_rhythm: $base_line_height_length
+link:
+  font_color: 428bca
+# literal is currently used for inline monospaced in prose and table cells
+literal:
+  font_color: b12146
+  font_family: M+ 1mn
+heading:
+  #font_color: 181818
+  font_color: 060201
+  #font_color: $base_font_color
+  font_family: $base_font_family
+  # h1 is used for part titles
+  h1:
+    page_break_after: always
+    page_break_before: always
+  chapter:
+    break-before: always
+  h1_font_size: floor($base_font_size * 2.6)
+  # h2 is used for chapter titles
+  h2_font_size: floor($base_font_size * 2.15)
+  h2:
+    page_break_after: always
+    page_break_before: always
+  h2-margin-page-top: $vertical-spacing * 1.75
+  part:
+    break-before: always
+    break-after: always
+  h3_font_size: round($base_font_size * 1.7)
+  h4_font_size: $base_font_size_large
+  h5_font_size: $base_font_size
+  h6_font_size: $base_font_size_small
+  font_style: bold
+  #line_height: 1.4
+  # correct line height for NotoSerif metrics
+  line_height: 1.2
+  #margin_top: $vertical_rhythm * 0.2
+  margin-top: $vertical-spacing * 0.2
+  margin_bottom: $vertical-spacing * 0.8
+title_page:
+  align: center
+  title_top: 33%
+  title_font_style: bold
+  title_font_family: CMU Concrete
+  title_font_size: $heading_h1_font_size
+  title_font_color: 000000
+  title_line_height: 0.9
+  subtitle_font_size: $heading_h3_font_size
+  subtitle_font_style: bold_italic
+  subtitle_line_height: 1
+  authors_margin_top: $base_font_size * 1.25
+  authors_font_size: $base_font_size_large
+  authors_font_color: 181818
+  revision_margin_top: $base_font_size * 1.25
+  logo-image: image:images/progmag.png[Logo,100,100,align="left"]
+  #background-image: image:adresse.svg[pdfwidth=10%]
+
+#prose:
+#  margin_top: 0
+#  margin_bottom: $vertical_rhythm
+block:
+  padding: [$vertical_rhythm, $vertical_rhythm * 1.25, $vertical_rhythm, $vertical_rhythm * 1.25]
+# code is used for source blocks (perhaps change to source or listing?)
+caption:
+  font_style: bold_italic
+  #align: center
+  align: left
+  # FIXME perhaps set line_height instead of / in addition to margins?
+  margin_inside: $vertical_rhythm * 0.25
+  margin_outside: 0
+code:
+  font_color: $base_font_color
+  font_family: $literal_font_family
+  font_size: ceil($base_font_size)
+  padding: $code_font_size
+  line_height: 1.25
+  #background_color: f5f5f5
+  #background_color: FFFFCC
+  background_color: FDDFFE
+  #border_color: cccccc
+  border_color: FFFFFF
+  border_radius: $base_border_radius
+  border_width: 0.75
+blockquote:
+  font_color: $base_font_color
+  font_size: $base_font_size_large
+  border_width: 5
+  border_color: $base_border_color
+  cite_font_size: $base_font_size_small
+  cite_font_color: 999999
+sidebar:
+  border_color: ffffff
+  border_radius: $base_border_radius
+  border_width: $base_border_width
+  background_color: eeeeee
+  title_font_color: $heading_font_color
+  title_font_family: CMU Concrete
+  title_font_size: $heading_h4_font_size
+  title_font_style: $heading_font_style
+  title_align: center
+example:
+  border_color: 000000
+  border_radius: 1
+  border_width: 0.75
+  #background_color: transparent
+  #background_color: DCB6E1
+  background_color: eeeeee
+pass:
+  font_color: $base_font_color
+  font_family: $literal_font_family
+  font_size: ceil($base_font_size)
+  line_height: 1.25
+  border_radius: $base_border_radius
+  border_width: 0.75
+  border_color: $base_border_color
+  background_color: CCFFFF
+admonition:
+  #border_color: $base_border_color
+  #border_width: $base_border_width
+  icon:
+    tip:
+      name: fas-fire
+      stroke-color: 111111
+  icon:
+    important:
+      stroke-color: ff0000
+  icon:
+    warning:
+      stroke-color: bf6900
+      size: 50
+  icon:
+    note:
+      size: 24
+      stroke-color: 19407c
+
+conum:
+  font_family: M+ 1mn
+  font_color: $literal_font_color
+  font_size: $base_font_size
+  line_height: 4 / 3
+image:
+  align_default: left
+  scaled_width_default: 0.5
+lead:
+  font_size: $base_font_size_large
+  line_height: 1.4
+abstract:
+  font_color: 5c6266
+  #font_size: $lead_font_size
+  font_size: $base_font_size
+  line_height: $lead_line_height
+  font_style: italic
+thematic_break:
+  border_color: $base_border_color
+  margin_top: $vertical_rhythm * 0.5
+  margin_bottom: $vertical_rhythm * 1.5
+description_list:
+  term_font_style: italic
+  description_indent: $horizontal_rhythm * 1.25
+outline_list:
+  indent: $horizontal_rhythm * 1.5
+  # NOTE item_spacing applies to list items that do not have complex content
+  item_spacing: $vertical_rhythm / 2
+table:
+  caption:
+    text-align: center
+  background_color: ffffff
+  #head_background_color: 2E8B57
+  head_background_color: bfbfbf
+  head_font_color: 000000
+  #even_row_background_color: f9f9f9
+  even_row_background_color: #F1948A
+  foot_background_color: f0f0f0
+  #border_color: 7C7C7C
+  border_color: bfbfbf
+  border_width: $base_border_width
+
+  cell_padding: [1, 1, 2, 1]
+  grid-width: 0.5
+
+toc-title: Contents
+
+toc:
+  #title:
+  #!toc_title: "Table des matières"
+  indent: $horizontal_rhythm
+  dot_leader_color: 000000
+  font_color: 000000
+  line_height: 1.4
+# NOTE In addition to footer, header is also supported
+header:
+  #padding: [7, 7, 7, 7]
+  border-style: solid
+  border-width: 0.25
+  border-color: 606060
+  margin: 2
+  height: 0.35in
+  line-height: 1
+  recto:
+    left:
+      content: image:images/progmag.png[width=50]
+    right:
+      content: '{document-title}'
+    content-margin: [0, 0, 0, inherit]
+  verso:
+    left:
+      content: image:images/progmag.png[width=50]
+    right:
+      content: '{document-title}'
+    content-margin: [0, 0, 0, inherit]
+footer:
+  border-style: solid
+  border-width: 0.25
+  border-color: 606060
+  margin: 2
+  height: 0.35in
+  line-height: 1
+  recto:
+    right:
+      content: '{page-number}'
+    left:
+      content: '{section-or-chapter-title}'
+  verso:
+    right:
+      content: '{page-number}'
+    left:
+      content: '{section-or-chapter-title}'
