@@ -1,7 +1,7 @@
 = Inline Text Formatting
 :example-caption!:
 
-You can add the following inline styles to your content:
+You can add the following inline styles to your content%%%:
 
 * Bold
 * Italic
